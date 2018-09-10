@@ -16,6 +16,7 @@ int main() {
 			cout<<i<<endl;
 			break;
 		}
+		
 	}
 	return 0;
 }
