@@ -35,6 +35,8 @@ int main(){
     }
   }
   printf("%d\n",answer);
+  //예시 답 및 테스트는 잘 되는데 채점은 틀린다고 나옴 ㅡㅡ
+  //테스트 케이스를 못잡겟다
   free(input);
   free(value);
   free(check);
