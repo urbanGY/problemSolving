@@ -38,11 +38,11 @@ int main(){
     if(max < day) max = day;
 
     if(x-1 >= 0 && board[x-1][y] == 0){
-      board[x-1][y] = day + 1;
+      board[x-1][y] = day + 1; //여기서 값을 바꿔줘야 다른 노드 탐색 때 중복해서 큐에 push하지 않는다. 곧 메모리, 속도 모두 개선된다.
       Node * node = (Node*)malloc(sizeof(Node));
       node->x = x-1;
       node->y = y;
-      node->day = day+1;
+      node->day = day+1;//바뀐 값 넣기
       Q.push(node);
     }//북
     if(x+1 < N && board[x+1][y] == 0){
