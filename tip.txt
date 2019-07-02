@@ -24,3 +24,9 @@ c++ algorithm tips!
 *math
  #include <cmath>
  반올림 할때 내림 함수인 floor( num+0.5); 형식으로 하면 반올림을 구현할 수 있다.
+
+*string
+ #include <string>
+ 기존의 c에서 사용하는 입출력 함수에는 집적 대응이 안되는듯 보임
+ stoi(string) //이걸로 인트로 바꿈
+ to_string(int) // 이걸로 스트링으로 바꿈  	
