@@ -1,3 +1,5 @@
+c++ algorithm tips!
+
 * Vector
  #include <vector> //헤더파일
  Vector <type> vec; //선언
