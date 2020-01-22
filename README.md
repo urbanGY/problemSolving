@@ -36,13 +36,19 @@
     for(const auto& elem : v){
         cout<<elem<<endl;
     }
+
 ## string
     #include <string>
-    string = to_string(a);
-
+    string = to_string(int);
+    int = stoi(string);
     bool cmp(string a, string b)
     return a+b > b+a;
     가장큰수 문제에서의 스크링 정렬 방법
+
+    string s = "abcdef";
+    s.substr() -> "abcdef"
+    s.substr(2) -> "cdef"
+    s.substr(2,1) ->"c"
 
 ## stack
     #include <stack>
@@ -51,6 +57,27 @@
     a = st.top();
     st.pop();
     st.empty();
+
+## heap
+    해당 문제)
+    programers -> level2 -> 더 맵게
+
+    min heap은 부모노드가 작은 수
+    max heap은 부모노드가 큰 수
+    #include <queue>
+    priority_queue< int, vector<int>, less<int> > pq; max heap
+    priority_queue< int, vector<int>, greater<int> > pq; min heap
+
+## map
+    해당 문제)
+    programers -> level2 -> 전화번호목록
+
+    #include <map>
+    map<key, value> m;
+    m[key] = value;
+
+    검색할때
+    if(m.find(key) == m.end()) key가 map에 없음
 
 ## BFS
     해당 문제)
@@ -64,3 +91,5 @@
     -> 단순 순회가 아니라 매 지점마다 최소거리 탐색 후 이동, 바꿔야할 수 cnt로 계산
     programers -> level2 -> 가장큰수
     -> 스트링 간 비교, nhn문제랑 유사
+    programers -> level2 -> 소수찾기
+    -> 순열 만들기 할게 아니라 스트링 정렬 후 나올 수 있는 숫자 내에서 소수 여부 판단하는 접근방식
