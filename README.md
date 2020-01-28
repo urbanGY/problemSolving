@@ -6,7 +6,7 @@
     tmp = (a%1234567) + (b%12345667);
     c = (tmp%1234567)
     이렇게 세 항목 모두 %해주기
-    
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -40,6 +40,11 @@
     for(const auto& elem : v){
         cout<<elem<<endl;
     }
+
+    v.back() 맨뒤 값 보기
+    v.pop_back() 맨뒤 팝, 즉 스택처럼 쓰기 가능
+
+    vector<int> v(4); [0,0,0,0] 초기화
 
 ## string
     #include <string>
@@ -86,6 +91,11 @@
 ## BFS
     해당 문제)
     programers -> level2 -> 카카오프렌 컬러링북
+
+## DP
+    해당 문제)
+    programers -> level2 -> 땅따먹기
+
 
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
