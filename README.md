@@ -7,6 +7,18 @@
     c = (tmp%1234567)
     이렇게 세 항목 모두 %해주기
 
+    최대공약수 유클리드 호제법
+
+    int gcd(int a, int b){
+    int tmp;
+    while(b != 0){
+            tmp = b;
+            b = a%b;
+            a = tmp;
+        }
+        return a;
+    }
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -34,6 +46,11 @@
         return answer;
     }
 
+    절대값
+    #include <cstdlib> abs() //int 타입 절대값
+    #include <cmath> fabs() //float 타입 절대값
+    int a = abs(10-9);
+
 ## vector
     #include <vector>
     c11 vector for문
@@ -45,6 +62,14 @@
     v.pop_back() 맨뒤 팝, 즉 스택처럼 쓰기 가능
 
     vector<int> v(4); [0,0,0,0] 초기화
+    vector<bool> v(4); [flase, false, false, false]
+
+    2차원 벡터
+    vector<vector<int> > vec;
+    vector<int> tmp;
+    tmp.push_back(1~10);
+    vec.push_back(tmp);
+
 
 ## string
     #include <string>
@@ -58,6 +83,16 @@
     s.substr() -> "abcdef"
     s.substr(2) -> "cdef"
     s.substr(2,1) ->"c"
+
+    string 분리하기
+    #include <string>
+    #include <sstream>
+    string s = "a b c d"
+    string buf;
+    stringstream ss(s);
+    while(ss >> buf)
+      cout<<buf<<endl;
+
 
 ## stack
     #include <stack>
@@ -96,6 +131,27 @@
     해당 문제)
     programers -> level2 -> 땅따먹기
 
+## 순열만들기
+    해당 문제)
+    programers -> level2 -> 단체사진찍기(kakao)
+
+    전역변수로 할 경우
+    vector<bool> check(8);
+    vector<char> pick(8);
+    string candidate = "ACFJMNRT";
+
+    void find(int index){
+      if(index == 8) return;
+
+      for(int i = 0 ; i < 8 ; i++){
+        if(!check[i]){
+          check[i] = true;
+          pick[i] = candidate[i];
+          find(index+1);
+          check[i] = false;
+        }
+      }
+    }
 
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
@@ -107,3 +163,5 @@
     -> 스트링 간 비교, nhn문제랑 유사
     programers -> level2 -> 소수찾기
     -> 순열 만들기 할게 아니라 스트링 정렬 후 나올 수 있는 숫자 내에서 소수 여부 판단하는 접근방식
+    programers -> level2 -> N개의 최소공배수
+    -> gcd, lcm의 깔금한 계산 코드, 여러개의 최대공배수를 갖기위한 재귀적 접근방식
