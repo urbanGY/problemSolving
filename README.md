@@ -19,6 +19,10 @@
         return a;
     }
 
+    소수구하기
+    루트N까지만 나눠보기
+    i <= sqrt(n)
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -50,6 +54,10 @@
     #include <cstdlib> abs() //int 타입 절대값
     #include <cmath> fabs() //float 타입 절대값
     int a = abs(10-9);
+
+    루트
+    #include <cmath>
+    sqrt(n);
 
 ## vector
     #include <vector>
@@ -115,6 +123,7 @@
 ## map
     해당 문제)
     programers -> level2 -> 전화번호목록
+    programers -> level2 -> 영어끝말잇기
 
     #include <map>
     map<key, value> m;
@@ -122,6 +131,16 @@
 
     검색할때
     if(m.find(key) == m.end()) key가 map에 없음
+
+    insert문
+    pair<map<int, int>::iterator, bool > pr;
+
+    pr = m.insert(pair<int, int>(10, 30));
+    if (true == pr.second)
+        cout << "key : " << pr.first->first << ", value : " << pr.first->second << " 저장 완료!" << endl;
+    else
+        cout << "key 10가 이미 m에 있습니다." << endl;
+
 
 ## BFS
     해당 문제)
@@ -153,6 +172,21 @@
       }
     }
 
+## 조합만들기
+    해당 문제)
+    programers -> level2 -> 소수만들기
+
+    void find(vector<int>& nums, int n, int start, int target){ //n이 반복횟수, start가 시작점, target이 목표 값
+        if(n == 0){
+            if(is_prime(target)) cnt++;
+            return;
+        }
+
+        for(int i = start ; i < len ; i++){
+            find(nums, n-1, i+1, target + nums[i]);
+        }
+    }
+
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
     -> 대각선이 지나가지 않는 사각형 유도 방법
@@ -165,3 +199,5 @@
     -> 순열 만들기 할게 아니라 스트링 정렬 후 나올 수 있는 숫자 내에서 소수 여부 판단하는 접근방식
     programers -> level2 -> N개의 최소공배수
     -> gcd, lcm의 깔금한 계산 코드, 여러개의 최대공배수를 갖기위한 재귀적 접근방식
+    programers -> level2 -> 영어끝말잇기
+    -> map insert로 중복 단어 체크방법
