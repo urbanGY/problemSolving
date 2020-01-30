@@ -141,6 +141,11 @@
     else
         cout << "key 10가 이미 m에 있습니다." << endl;
 
+    map iterator 선언방법 및 사용법
+    map<string, bool>::iterator i;
+    for(i = m.begin() ; i != m.end() ; i++)
+        cout<<i->first<<endl;
+
 
 ## BFS
     해당 문제)
@@ -201,3 +206,6 @@
     -> gcd, lcm의 깔금한 계산 코드, 여러개의 최대공배수를 갖기위한 재귀적 접근방식
     programers -> level2 -> 영어끝말잇기
     -> map insert로 중복 단어 체크방법
+    programers -> level2 -> [1차]뉴스클러스터 (카카오)
+    너무 어렵게 생각하지 말고 input scale 생각해서 짜기
+    
