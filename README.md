@@ -90,7 +90,7 @@
     string s = "abcdef";
     s.substr() -> "abcdef"
     s.substr(2) -> "cdef"
-    s.substr(2,1) ->"c"
+    s.substr(2,1) ->"c" // 2번째부터 1개의 문자열을 가져오겠다 라는 뜻
 
     string 분리하기
     #include <string>
@@ -196,6 +196,7 @@
     programers -> level2 -> 멀쩡한사각형
     -> 대각선이 지나가지 않는 사각형 유도 방법
     programers -> level2 -> 다리를 지나는 트럭
+    -> 처음엔 안풀렸는데 다시 차분하게 풀어보니 풀림
     programers -> level2 -> 조이스틱
     -> 단순 순회가 아니라 매 지점마다 최소거리 탐색 후 이동, 바꿔야할 수 cnt로 계산
     programers -> level2 -> 가장큰수
@@ -208,4 +209,5 @@
     -> map insert로 중복 단어 체크방법
     programers -> level2 -> [1차]뉴스클러스터 (카카오)
     너무 어렵게 생각하지 말고 input scale 생각해서 짜기
-    
+    programers -> level3 -> N으로 표현
+    dp문제라고는 하는데 dp로 못풀겠다.. dfs로 풀어보기
