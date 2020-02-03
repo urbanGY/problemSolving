@@ -23,6 +23,17 @@
     루트N까지만 나눠보기
     i <= sqrt(n)
 
+    반복문의 탈출 조건은 매회 체크
+    매번 가변적인 조건에서 반복문을 돌릴 경우 n < q.size() 로 하고
+    아래 코드와 같은 경우에는 상수로 미리 값을 받아서 탈출조건을 만든다.
+    int n = 0, end = q.size();
+    while(n < end){                
+      tmp = q.front();
+      q.pop();
+      if(tmp != refine_city) q.push(tmp);
+      n++;
+    }
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -100,6 +111,14 @@
     stringstream ss(s);
     while(ss >> buf)
       cout<<buf<<endl;
+
+    string 모두 소문자 or 대문자로 만들기, tolower/toupper 앞에 캐스팅을 해줘야 컴파일을 함
+    #include <algorithm>
+    #include <string>
+    string refine_city = cities[i];
+    **transform(refine_city.begin(), refine_city.end(), refine_city.begin(), (int(*)(int))tolower**
+
+
 
 
 ## stack
@@ -197,6 +216,10 @@
     -> 대각선이 지나가지 않는 사각형 유도 방법
     programers -> level2 -> 다리를 지나는 트럭
     -> 처음엔 안풀렸는데 다시 차분하게 풀어보니 풀림
+    programers -> level2 -> 라면공장
+    -> 시뮬레이션 문제 잘 읽고 하기
+    programers -> level2 -> 가장 큰 정사각형
+    -> brute force로 안되면 dp로 생각해보기
     programers -> level2 -> 조이스틱
     -> 단순 순회가 아니라 매 지점마다 최소거리 탐색 후 이동, 바꿔야할 수 cnt로 계산
     programers -> level2 -> 가장큰수
@@ -209,5 +232,7 @@
     -> map insert로 중복 단어 체크방법
     programers -> level2 -> [1차]뉴스클러스터 (카카오)
     너무 어렵게 생각하지 말고 input scale 생각해서 짜기
+    programers -> level2 -> [1차]캐시 (카카오)
+    여러 자료구조, algorithm 헤더의 transform함수 사용, tolower 함수 캐스팅 조건 
     programers -> level3 -> N으로 표현
     dp문제라고는 하는데 dp로 못풀겠다.. dfs로 풀어보기
