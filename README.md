@@ -23,6 +23,36 @@
     루트N까지만 나눠보기
     i <= sqrt(n)
 
+    순서마다 실행하기 ex) programers -> level2 -> [3차]n진수게임
+    m명이서 뭔가 하는데 내가 p번째 일 때 %써도 좋지만 직관적으로 그냥 m번째 턴이 넘어가면 1번째로 돌리는 코드로 하자.
+    int p = 1, m = 2; //내 차례가 p , m명이서 진행
+    int turn = 1;
+    while(true){
+      if(turn == p) something...
+      turn++;
+      if(turn > m) turn = 1;
+    }
+
+    num이 들어왔을 때 n진수로 만들기
+    num이 0일때 따로 분리
+    10이 넘어가는 잔수의 경우에 A로 바꿔주는 경우는 아래같이
+    문제는 결과가 뒤집어져서 저장되기 때문에 거꾸로 세던가 뒤집어주는 과정을 거쳐야한다.
+    string make_n(int n, int num){
+        string result = "";
+        if(num == 0) return "0";
+        while(num){
+            int mod = num%n;
+            if(mod >= 10){
+                mod -= 10;
+                result += ('A' + mod);
+            }else {
+                result += to_string(mod);    
+            }        
+            num /= n;
+        }    
+        return result;
+    }
+
     반복문의 탈출 조건은 매회 체크
     매번 가변적인 조건에서 반복문을 돌릴 경우 n < q.size() 로 하고
     아래 코드와 같은 경우에는 상수로 미리 값을 받아서 탈출조건을 만든다.
@@ -112,11 +142,22 @@
     while(ss >> buf)
       cout<<buf<<endl;
 
+    string 분리 공백 외의 경우
+    while(getline(ss,buf,',')){ //이렇게하면 , 로 나눠줌.
+      cout<<buf<<endl;
+    }
+
     string 모두 소문자 or 대문자로 만들기, tolower/toupper 앞에 캐스팅을 해줘야 컴파일을 함
     #include <algorithm>
     #include <string>
     string refine_city = cities[i];
     **transform(refine_city.begin(), refine_city.end(), refine_city.begin(), (int(*)(int))tolower**
+
+    string s = "";
+    char a = 'a', b = 'b';
+    s = a+b;
+    이렇게 하면 a+b를더한 아스키코드값이 s에 대입된다.
+    s = "ab" 이렇게 되는게 아니다!
 
 
 
@@ -233,6 +274,8 @@
     programers -> level2 -> [1차]뉴스클러스터 (카카오)
     너무 어렵게 생각하지 말고 input scale 생각해서 짜기
     programers -> level2 -> [1차]캐시 (카카오)
-    여러 자료구조, algorithm 헤더의 transform함수 사용, tolower 함수 캐스팅 조건 
+    여러 자료구조, algorithm 헤더의 transform함수 사용, tolower 함수 캐스팅 조건
+    programers -> level2 -> 후보키 (카카오)
+    후보키의 후보들중 최소성 위반 제거하는 반복문 조건 까다로움. dfs로 후보를 찾기 때문에 012 02 순서로 후보가 나올 수 있고 이때 012가 제거되야하는 조건은 0과 2 모두가 검출되어야 하는 부분을 구현해야함.
     programers -> level3 -> N으로 표현
     dp문제라고는 하는데 dp로 못풀겠다.. dfs로 풀어보기
