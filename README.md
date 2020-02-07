@@ -111,6 +111,7 @@
     v.pop_back() 맨뒤 팝, 즉 스택처럼 쓰기 가능
 
     vector<int> v(4); [0,0,0,0] 초기화
+    vector<int> v(4, 1); [1,1,1,1] 초기화
     vector<bool> v(4); [flase, false, false, false]
 
     2차원 벡터
@@ -210,6 +211,10 @@
 ## BFS
     해당 문제)
     programers -> level2 -> 카카오프렌 컬러링북
+
+## BFS
+    해당 문제)
+    programers -> level3 -> 네트워크
 
 ## DP
     해당 문제)
