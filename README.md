@@ -120,6 +120,9 @@
     tmp.push_back(1~10);
     vec.push_back(tmp);
 
+    2차원 벡터 초기화
+    vector<vector<bool>> graph(n,vector<bool>(n,false));
+
 
 ## string
     #include <string>
@@ -215,7 +218,13 @@
 ## BFS
     해당 문제)
     programers -> level3 -> 네트워크
+    재귀 함수를 통한 BFS
 
+    해당 문제)
+    programers -> level3 -> 가장 먼 노드
+    queue를 이용한 BFS
+    연결 여부 판단하는 2차원 벡터, 방문 여부 판단하는 1차원 벡터, queue가 빌 때 까지 반복하여 2차원 벡터 순회
+    
 ## DP
     해당 문제)
     programers -> level2 -> 땅따먹기
@@ -257,6 +266,11 @@
         }
     }
 
+## 크루스칼
+    programers -> level3 -> 섬 연결하기
+    최소신장 트리 문제 해결
+    정점이 n개인 그래프의 간선중 일부인 n-1개의 간선을 선택해서 모든 정점을 연결한 트리중 가중치의 합이 최소인 트리
+
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
     -> 대각선이 지나가지 않는 사각형 유도 방법
@@ -284,3 +298,5 @@
     후보키의 후보들중 최소성 위반 제거하는 반복문 조건 까다로움. dfs로 후보를 찾기 때문에 012 02 순서로 후보가 나올 수 있고 이때 012가 제거되야하는 조건은 0과 2 모두가 검출되어야 하는 부분을 구현해야함.
     programers -> level3 -> N으로 표현
     dp문제라고는 하는데 dp로 못풀겠다.. dfs로 풀어보기
+    programers -> level3 -> 섬 연결하기
+    전형적인 크루스칼 문제
