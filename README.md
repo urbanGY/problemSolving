@@ -177,12 +177,22 @@
 ## heap
     해당 문제)
     programers -> level2 -> 더 맵게
+    programers -> level3 -> 디스크 컨트롤러
 
     min heap은 부모노드가 작은 수
     max heap은 부모노드가 큰 수
     #include <queue>
     priority_queue< int, vector<int>, less<int> > pq; max heap
     priority_queue< int, vector<int>, greater<int> > pq; min heap
+
+    pq.top() // 맨위 값 보기, 다른 자료구조는 front인데 얘는 특이
+
+    heap의 cmp부분 정의하는 방법.
+    struct cmp_min {
+        bool operator()(vector<int> a, vector<int> b){
+            return a[1] > b[1]; // sort의 cmp와 반대느낌이다.
+        }
+    };
 
 ## map
     해당 문제)
@@ -224,7 +234,7 @@
     programers -> level3 -> 가장 먼 노드
     queue를 이용한 BFS
     연결 여부 판단하는 2차원 벡터, 방문 여부 판단하는 1차원 벡터, queue가 빌 때 까지 반복하여 2차원 벡터 순회
-    
+
 ## DP
     해당 문제)
     programers -> level2 -> 땅따먹기
