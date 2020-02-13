@@ -225,7 +225,6 @@
     해당 문제)
     programers -> level2 -> 카카오프렌 컬러링북
 
-## BFS
     해당 문제)
     programers -> level3 -> 네트워크
     재귀 함수를 통한 BFS
@@ -235,9 +234,19 @@
     queue를 이용한 BFS
     연결 여부 판단하는 2차원 벡터, 방문 여부 판단하는 1차원 벡터, queue가 빌 때 까지 반복하여 2차원 벡터 순회
 
+    programers -> level3 -> 단어변환
+    queue 이용
+    중복되지 않게 vector<bool> 체크리스트를 썼으며 마킹한 후 큐에 푸쉬하고 다시 그 마킹된 값을 초기화 시켜줘야함. 왜냐하면 마킹된 값이 누적되기 때문
+
+## DFS
+    해당 문제)
+    programers -> level3 -> 여행경로
+
+
 ## DP
     해당 문제)
     programers -> level2 -> 땅따먹기
+    programers -> level3 -> 정수삼각형
 
 ## 순열만들기
     해당 문제)
@@ -310,3 +319,5 @@
     dp문제라고는 하는데 dp로 못풀겠다.. dfs로 풀어보기
     programers -> level3 -> 섬 연결하기
     전형적인 크루스칼 문제
+    programers -> level3 -> 여행경로
+    dfs와 string sorting 혼합 문제. 그동안 푼 문제의 유형 안에 풀림
