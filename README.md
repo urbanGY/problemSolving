@@ -64,6 +64,25 @@
       n++;
     }
 
+    해당 문제)
+    programers -> level3 -> 저울
+    이 문제에서 for문 안에 +1 연산을 할 경우 for문이 실행되지 않았을 때 경우를 고려할 수 없게 된다. 항상 모든 케이스가 for문에 들어오는지 생각해서 문제를 풀자
+    bool cmp(int a, int b) { return a < b;}
+    int solution(vector<int> weight) {
+        int answer = 0;
+        sort(weight.begin(), weight.end(), cmp);
+        answer += weight[0];
+        for(int i = 1 ; i < weight.size() ; i++){
+            if(weight[i] > answer+1){
+                //여기서 뭔가 answer+1을 옮기는 코드를 쓰면 이 for문이 돌지 않는 경우를 고려할 수 없기 때문에 틀리게 된다.
+                break;
+            }else {
+                answer += weight[i];
+            }
+        }
+        return answer+1;
+    }
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -123,6 +142,18 @@
     2차원 벡터 초기화
     vector<vector<bool>> graph(n,vector<bool>(n,false));
 
+## deque
+    #include <deque>
+    벡터와 단점을 보완하는 자료구조
+    deque<int> dq;
+    dq.front();
+    dq.pop_front();
+    dq.back()
+    dq.pop_back();
+    앞 뒤로 삽입, 제거가 가능한 자료구조.
+    벡터는 원소가 추가될 때 마다 메모리 재할당 후 복사하기에 성능저하의 문제가 있음
+    덱은 일정크기의(커다란) 메모리 블록을 할당해 사용하고 부족해지면 더큰 공간 할당 받아서 사용. 위 문제를 개선 (메모리 공간이 비효율적이지 않을까?..)
+    vector와 같은 메커니즘으로 sort함수 쓸 수 있음
 
 ## string
     #include <string>
@@ -321,3 +352,5 @@
     전형적인 크루스칼 문제
     programers -> level3 -> 여행경로
     dfs와 string sorting 혼합 문제. 그동안 푼 문제의 유형 안에 풀림
+    programers -> level3 -> 저울
+    acm icpc 2018 A번 블록체인 문제랑 굉장이 유사한 발상으로 풀수있음. brute force로 다 찾아서 하는게 아님. 이 문제에서 중요한건 for문이 실행 안될 수 도 있는 경우를 생각해서 코드를 짜야한다.
