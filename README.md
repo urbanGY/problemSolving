@@ -278,6 +278,7 @@
     해당 문제)
     programers -> level2 -> 땅따먹기
     programers -> level3 -> 정수삼각형
+    programers -> level3 -> 보행자천국
 
 ## 순열만들기
     해당 문제)
@@ -354,3 +355,5 @@
     dfs와 string sorting 혼합 문제. 그동안 푼 문제의 유형 안에 풀림
     programers -> level3 -> 저울
     acm icpc 2018 A번 블록체인 문제랑 굉장이 유사한 발상으로 풀수있음. brute force로 다 찾아서 하는게 아님. 이 문제에서 중요한건 for문이 실행 안될 수 도 있는 경우를 생각해서 코드를 짜야한다.
+    programers -> level3 -> 보행자 천국
+    흔한 그래프의 경로의 수 를 dp로 푸는 문제유형이지만 기존과 다르게 두개의 그래프를 따로 계산해 문제를 해결한다.
