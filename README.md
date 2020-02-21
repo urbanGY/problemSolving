@@ -86,6 +86,27 @@
     programers -> level3 -> nqueens 같은 경우
     고려해야 할 경우의 수를 최대한 제한 한 상태로 dfs를 시행한다.
 
+    programers -> level3 -> 하노이탑
+    재귀적으로 아래 코드로 동작함
+    void find(int num, int start, int end)//num개 원판, start기둥, end기둥
+    {
+      if(num >= 1){
+        find(num-1, start, 6-start-end);
+        //문제별로 적절히 응용하기
+        find(num-1, 6-start-end, end);
+      }
+    }
+
+    programers -> level3 -> 배달
+    우선순위 큐의 비교를 정의할 때 sort와 반대로 된다는 것을 반드시 생각하고 진행하자!!@!!!
+
+
+## 시간초과, 공간초과
+    해당 문제)
+    programers -> level3 -> 최고의집합
+    vector 동적 메모리 할당 오버헤드 문제
+    vector는 원소가 추가될 때 마다 새롭게 메모리를 할당 받는다. 즉 동적으로 메모리 할당에 오버헤드가 큰 것이다. 이 문제는 일반 문제처럼 벡터 원소를 추가하면서 문제를 풀면 시간초과가 발생한다. 문제 해결 방법은 미리 벡터를 필요한 크기만큼 할당받고 원소의 내용을 바꾸는 것이다. c의 배열은 할당 당시에 크기가 고정되기 때문에 이 문제에서 초과 문제가 없지만 c++에서 그냥 벡터를 추가하며 쓴 경우엔 이런 문제가 생긴다.
+
 ## dp1010 다리놓기
     n C r = n-1 C r-1 + n-1 C r
 	factorial 은 unsigned long long int 해도 20 몇? 부터는 계산이 안됨
@@ -227,6 +248,7 @@
             return a[1] > b[1]; // sort의 cmp와 반대느낌이다.
         }
     };
+    다시 한번 강조!!! sort와 반대 느낌이다!!!!
 
 ## map
     해당 문제)
@@ -344,6 +366,33 @@
     최소신장 트리 문제 해결
     정점이 n개인 그래프의 간선중 일부인 n-1개의 간선을 선택해서 모든 정점을 연결한 트리중 가중치의 합이 최소인 트리
 
+## 다익스트라
+    시작지점으로부터 다른 노드까지의 거리가 최소가 되는 트리
+    vector가 메모리 더 적게먹는듯
+    노드간 weight 정의된 board
+    시작노드로부터 각 노드간 거리를 담은 distance
+    value 가 작은 순으로 나오는 pq
+    방문여부 판단 visited 배열
+
+    해당문제)
+    programers -> level3 -> 배달
+
+    pq.push(make_pair(1,0));// first가 노드번호, second 가 weight
+    distance[1] = 0;
+    while(!pq.empty()){        
+        pair<int, int> pos = pq.top();
+        int current = pos.first, weight = pos.second; //여기서 weight는 1번에서부터 현재 노드 까지의 최소 weight이다
+        pq.pop();
+        if(visited[current]) continue; // 이전엔 아래의 for문의 if에 이를 넣었으나 여기서 사전에 막아버리면 시간, 공간적으로 훨씬 이득이다. (배달 문제의 핵심 포인트 부분)
+        visited[current] = true;
+        for(int i = 1 ; i <= N ; i++){
+            if(board[current][i] != 987654321){//방문하지 않았고 현재 노드로부터 연결된 노드                                                  
+                distance[i] = min(distance[i], weight+board[current][i]);
+                pq.push(make_pair(i,distance[i]));
+            }
+        }
+    }
+
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
     -> 대각선이 지나가지 않는 사각형 유도 방법
@@ -384,4 +433,4 @@
     programers -> level3 -> 거스름돈
     -> 발상이 너무 어려운 dp문제다.. 시간 최적화가 너무 어려움
     programers -> level3 -> 방문길이
-    -> 맵으로 접근했는데 1,1 -> 1,2 와 1,2 -> 1,1 이 한 방문에 생기는 선분 쌍으로 맵의 전체 크기의 반 만큼이 정답이 된다. 
+    -> 맵으로 접근했는데 1,1 -> 1,2 와 1,2 -> 1,1 이 한 방문에 생기는 선분 쌍으로 맵의 전체 크기의 반 만큼이 정답이 된다.
