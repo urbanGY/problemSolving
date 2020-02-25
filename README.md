@@ -219,7 +219,14 @@
     s = "ab" 이렇게 되는게 아니다!
 
 
-
+    해당 문제)
+    programers -> level3 -> 매칭점수
+    스트링 찾기
+    string s = "hi hello";
+    string::size_type n = s.find("hi");
+    n // 0
+    n = s.find("hi",3); // 이렇게하면 3번째부터 hi를 찾게됨 현재 예시의 경우 이렇게되면 찾을 수 없음
+    if(string::npos == n) // 찾지 못한경우는 이렇게 표현할 수 있음.
 
 ## stack
     #include <stack>
@@ -393,6 +400,20 @@
         }
     }
 
+## 트리만들기
+    programers -> level3 -> 길 찾기 게임
+
+    노드 정의
+    struct Node {
+        int x;
+        int y;
+        int val;
+        Node* left;
+        Node* right;
+        Node* parent;
+    };
+    cur = new Node(); // 이렇게 메모리 할당. () 쳐줘야 세그먼트 펄트 안뜬다. 아마 초기화 해주는듯
+
 ## 다시 볼 문제
     programers -> level2 -> 멀쩡한사각형
     -> 대각선이 지나가지 않는 사각형 유도 방법
@@ -438,3 +459,7 @@
     -> 다익스트라로 해결되는 문제. while 내부에서 방문여부를 미리 판단해 메모리, 시간 초과를 줄인다.
     programers -> level3 -> 숫자놀이
     -> 큰 숫자부터 비교해 B가 크면 A,B동시 제거, A가 크면 continue하는 발상... 할 수 있을까.. ㅠㅠ
+    programers -> level3 -> 길 찾기 게임
+    -> c++로 트리 만들어서 순회하기. 그냥 만들기가 조금 까다로움
+    programers -> level3 -> 문자열 압축(카카오)
+    -> 같은 개수가 10개가 되면 2자리, 100개가 넘으면 3자리가 된다는 것을 고려해서 짜야됨
