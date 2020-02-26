@@ -166,6 +166,11 @@
     2차원 벡터 초기화
     vector<vector<bool>> graph(n,vector<bool>(n,false));
 
+    벡터 지우기
+    vector<int> v (4,1);
+    v.erase(v.begin()+1); // 0+1번째 인덱스에 있는 벡터 제거. 즉 두번째 벡터 원소가 제거된다.
+    다만 벡터에서 erase를 많이 쓰는 건 좋은 선택이 아니니 다른 자료구조를 생각해보자.
+
 ## deque
     #include <deque>
     벡터와 단점을 보완하는 자료구조
