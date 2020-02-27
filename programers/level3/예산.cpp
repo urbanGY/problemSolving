@@ -22,7 +22,7 @@ int solution(vector<int> budgets, int M) {
     for(auto & budget : budgets)
         sum += budget;
     if(sum <= (long long)M) return budgets.back();
-    int min = 0, max = 100000, tmp = 0;
+    int min = 0, max = 100000, tmp = 0; //tmp 와 mid가 같은 것을 판단해서 답을 찾자.
 
     while(true){
         int mid = (max+min)/2;
