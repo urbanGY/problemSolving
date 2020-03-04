@@ -157,14 +157,11 @@
     vector<int> v(4, 1); [1,1,1,1] 초기화
     vector<bool> v(4); [flase, false, false, false]
 
-    2차원 벡터
-    vector<vector<int> > vec;
-    vector<int> tmp;
-    tmp.push_back(1~10);
-    vec.push_back(tmp);
-
     2차원 벡터 초기화
     vector<vector<bool>> graph(n,vector<bool>(n,false));
+
+    벡터 초기화
+    vector<int> v {1,2,3,4,5};
 
     벡터 지우기
     vector<int> v (4,1);
