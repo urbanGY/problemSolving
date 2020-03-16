@@ -143,6 +143,23 @@
     #include <cmath>
     sqrt(n);
 
+    에라스토테네스의 체
+    해당문제)
+    programers -> level1 -> 소수찾기
+    n 이 100만까지인 조건 하에서 효율성 테스트를 통과했다. 기존 무식한 방법으로 해결하면 기본 조건도 통과가 안되며 루트로 반복횟수를 줄여도 효율성을 통과못함
+
+    if(n == 2) return 1;
+    vector<bool> v(1000001,false); //false로 초기화
+    for(int i = 2 ; i <= n ; i++){
+        if(v[i] == false){ //false인 곳은 처음 방문한 지점. 즉 소수다
+            answer++;
+            for(int j = i+i ; j <= n ; j += i){ //소수의 배수를 모두 true로 바꿔줌
+                v[j] = true;
+            }
+        }
+    }
+
+
 ## vector
     #include <vector>
     c11 vector for문
