@@ -294,6 +294,15 @@
     이런 식으로 pair에 빈 pq를 넣어야 할 때 ()를 붙이면 들어간다.
     m[genres[i]].second = priority_queue<pair<int, int>, vector<pair<int, int> > , cmp>();
 
+## set
+    #include <set>
+    set<string> s;
+    s.insert(str);
+    s.size();
+    이런 식으로 사용!
+
+    해당 문제)
+    programers -> level3 -> 보석쇼핑
 ## map
     해당 문제)
     programers -> level2 -> 전화번호목록
@@ -411,6 +420,21 @@
             find(nums, n-1, i+1, target + nums[i]);
         }
     }
+## 플로이드
+    크루스칼과 같이 최소신장트리를 만드는 알고리즘이다. O(n^3)의 알고리즘으로 완전탐색으로 가중치를 갱신하는데 시간 복잡도가 그리 좋지 않기 때문에 적절한 크기의 n일때 쓰는게 좋겠다.
+    a->b, b->c, a->c 의 연결을 보일 경우 a->c 의 가중치와 a->b, b->c의 가중치 값의 합을 비교해 더 작은 경로를 선택하는 방법으로 그래프를 갱신한다.
+
+    해당 문제) programers -> level3 -> 순위
+    a->b,b->c일 경우 조건이 주어지지 않아도 a->c라는 것을 이용하면 된다.
+
+    for(int i = 1 ; i <= n ; i++){
+        for(int j = 1 ; j <= n ; j++){
+            for(int k = 1 ; k <= n ; k++){
+                if(v[j][i] && v[i][k]) v[j][k] = true;                
+            }
+        }  
+    }
+    핵심이 되는 코드는 위와 같으며 i에 대해서 완전탐색을 하여 i를 이기고 i에 지는 j,k를 연결하는 역할을 한다.
 
 ## 크루스칼
     programers -> level3 -> 섬 연결하기
@@ -523,6 +547,7 @@
       }
 
     }
+
 
 ## n개의 리스트 중에서 가장 큰 값을 뽑는 방법
     해당문제)
