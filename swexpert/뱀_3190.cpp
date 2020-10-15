@@ -21,7 +21,7 @@ bool isOkay() {
 
 bool isApple() {
 	int x = head.first, y = head.second;
-	for(auto& a : apple) {
+	for(auto& a : apple) { // auto a : apple 이렇게 했는데 이건 당연하지만 값을 복사하는 것이기 때문에 아래의 -999가 먹히지 않아서 문제가 생긴 것이다.
 		if(x == a.first && y == a.second) {
 			a.first = -999;
 			a.second = -999;
