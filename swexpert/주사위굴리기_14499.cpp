@@ -27,8 +27,8 @@ void move(int direct) {
 	}
 }
 
-void diceChange(int direct) {
-	int _head = head, _bottom = bottom, _l = l, _r = r, _t = t, _b = b;
+void diceChange(int direct) { // 복잡하게 생각하지 말고 현재 상황에서 변화하는게 다음 상황에서도 재귀적으로 사용될 수 있는 부분을 생각.
+	int _head = head, _bottom = bottom, _l = l, _r = r, _t = t, _b = b; // 주사위 인덱스가 메 상황마다 어디와 교환되는지 맵핑만 시켜놓으면 된다.
 	if(direct == 1) { // 동쪽
 		head = _l;
 		bottom = _r;
